@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ORANG ENAK STORE</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="side-nav" aria-label="Menu utama">
+      <div class="brand-mark">OE</div>
+      <button class="nav-button" id="homeBtn" type="button">
+        <span>Beranda</span>
+      </button>
+      <button class="nav-button" id="checkProductsBtn" type="button">
+        <span>Cek Produk</span>
+      </button>
+      <button class="nav-button nav-button-primary" id="orderNowBtn" type="button">
+        <span>Pesan Sekarang</span>
+      </button>
+    </aside>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <h1>ORANG ENAK STORE</h1>
+          <p class="slogan">SATU BOTOL BIKIN CURHAT</p>
+          <p class="eyebrow">Promo berlaku untuk semua produk</p>
+          <div class="hero-actions">
+            <button class="cta-button" type="button" data-scroll-target="products">
+              Lihat Pilihan
+            </button>
+            <button class="ghost-button" type="button" data-scroll-target="checkout">
+              Buat Nota
+            </button>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Tampilan produk unggulan">
+          <div class="bottle bottle-tall"></div>
+          <div class="bottle bottle-short"></div>
+          <div class="glass"></div>
+          <div class="promo-badge">
+            <strong>Beli 3</strong>
+            <span>Gratis 1</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="products-section" id="products">
+        <div class="section-heading">
+          <p class="eyebrow">Daftar Produk</p>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="checkout-section" id="checkout">
+        <div class="section-heading">
+          <p class="eyebrow">Belanja</p>
+        </div>
+
+        <div class="checkout-layout">
+          <div class="order-panel">
+            <h3>Pilih Produk</h3>
+            <div class="order-list" id="orderList"></div>
+            <div class="checkout-actions">
+              <p class="checkout-actions-title">Metode Pembayaran</p>
+              <div class="payment-method-buttons" id="paymentButtons" aria-label="Pilih metode pembayaran">
+                <button class="method-button active" type="button" data-method="Cash">Cash</button>
+                <button class="method-button" type="button" data-method="Qris">Qris</button>
+                <button class="method-button" type="button" data-method="Transfer Bank">Transfer Bank</button>
+              </div>
+              <button class="pay-button" id="payNowBtn" type="button">Bayar Sekarang</button>
+              <p class="payment-message" id="paymentMessage" role="status" aria-live="polite"></p>
+            </div>
+
+            <div class="receipt-panel">
+              <div class="receipt-card" id="receipt">
+                <div class="receipt-top">
+                  <div>
+                    <p class="receipt-store">ORANG ENAK STORE</p>
+                    <p>SATU BOTOL BIKIN CURHAT</p>
+                  </div>
+                  <span id="receiptDate"></span>
+                </div>
+
+                <div class="receipt-lines" id="receiptLines"></div>
+
+                <div class="payment-box">
+                  <label for="paymentMethod">Metode Pembayaran</label>
+                  <select id="paymentMethod">
+                    <option value="Cash">Cash</option>
+                    <option value="Qris">Qris</option>
+                    <option value="Transfer Bank">Transfer Bank</option>
+                  </select>
+                </div>
+
+                <div class="total-box">
+                  <div>
+                    <span>Status Pembayaran</span>
+                    <strong id="paymentStatus">Belum dibayar</strong>
+                  </div>
+                  <div>
+                    <span>Item Dibayar</span>
+                    <strong id="paidItems">0 botol</strong>
+                  </div>
+                  <div>
+                    <span>Gratis Promo</span>
+                    <strong id="freeItems">0 botol</strong>
+                  </div>
+                  <div class="grand-total">
+                    <span>Total</span>
+                    <strong id="grandTotal">Rp.0</strong>
+                  </div>
+                </div>
+              </div>
+
+              <button class="print-button" id="printReceiptBtn" type="button">
+                Cetak Nota Belanja
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
